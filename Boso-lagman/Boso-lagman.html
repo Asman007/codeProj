@@ -7,126 +7,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>Fast-Food</title>
-    <link rel="stylesheet" href="KFC.css">
+    <link rel="stylesheet" href="/KFC/KFC.css">
     <style>
-        body {font-family: Arial, Helvetica, sans-serif;}
-        .modal {  
-          display: none;
-          position: fixed;
-          z-index: 100;
-          padding-top: 100px;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          overflow: auto;
-          background-color: rgb(0,0,0);
-          background-color: rgba(0,0,0,0.4); 
-        }
-        .modal-content {
-            border-radius: 30px;
-            position: relative;
-            background-color: #fefefe;
-            margin: auto;
-            padding: 0;
-            width: 45%;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-            -webkit-animation-name: animatetop;
-            -webkit-animation-duration: 0.4s;
-            animation-name: animatetop;
-            animation-duration: 0.4s
-        }
-        @-webkit-keyframes animatetop {
-          from {top:-300px; opacity:0} 
-          to {top:0; opacity:1}
-        }
-        @keyframes animatetop {
-          from {top:-300px; opacity:0}
-          to {top:0; opacity:1}
-        }
-        .close {
-            color: white;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        input[type=text], input[type=password] {
-            width: 95%;
-            padding: 15px;
-            margin: 5px 0 15px 0;
-            display: inline-block;
-            border: none;
-            background: #c6c6c6;
-            border-radius: 20px;
-        }
-        input[type=text]:focus, input[type=password]:focus {
-            background-color: #ddd;
-            outline: none;
-        }
-        .modal-header {
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
-            padding: 2px 16px;
-            background-color: #D67E34;
-            color: white;
-            margin-bottom: 15px;
-        }
-        .modal-header h2{
-            margin-left: 35%;
-        }
-        .modal-body {padding: 2px 16px;}
-        hr{
-            display: inline-block;
-        }
-        .registerbtn {
-            background-color: #D67E34;
-            color: white;
-            padding: 16px 20px;
-            margin-bottom: 15px;
-            border: none;
-            font-weight: 800;
-            font-size: 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            width: 49%;
-            opacity: 0.9;
-        }
-        .registerbtn :hover{
-            background-color: white;
-            color: #D67E34;
-            border: 3px solid #D67E34;
-        }
-        .signbtn :hover{
-            background-color: #D67E34;
-            color: white;
-        }
-        .signbtn {
-            background-color: white;
-            color: #D67E34;
-            border: 3px solid #D67E34;
-            padding: 16px 20px;
-            margin-bottom: 15px;
-            font-weight: 800;
-            font-size: 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            width: 49%;
-            opacity: 0.9;
-        }
-        button.new{
-            background-color: #D67E34;
-            text-decoration: none;
-            padding: 14px 40px ;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 30px;
+        .kfc img{
+            border-radius: 100px;
         }
     </style>
 </head>
@@ -141,14 +25,15 @@
                 <p>Бишкек</p>
             </div>
             <div class="zakaz">
-                <button id="myBtn" class="new">ЗАКАЗАТЬ</button>
+                <a href="#">ЗАКАЗАТЬ</a>
             </div>
         </div>
     </div>
     <div class="kfc">
-        <img class="logo-kfc" src="/KFC/kfc-foto/logo.svg" width="70px" >
-        <p>KFC</p>
+        <img class="logo-kfc" src="/foto/boso-lagman.jpg" width="100px" >
+        <p>BOSO Lagman</p>
     </div>
+
     <div class="vse-cafe">
         <div class="vse-categoriii">
             <p>Разделы</p>
@@ -163,6 +48,8 @@
                 <a href="#8">Байтсы</a><br>
                 <a href="#9">Наггетсы</a><br>
                 <a href="#10">Ножки</a><br>
+
+            
         </div>
         <div class="vse-card">
             <div class="razdel1">
@@ -367,14 +254,14 @@
                 </div>
                 <div class="carty">
                     <div class="card-cafe">
-                        <img src="/KFC/kfc-foto/13.png" height="150" width="250">
+                        <img src="/KFC/kfc-foto/14.png" height="150" width="250">
                         <div class="caardd">
                             <p>Картофель фри баскет</p>
                             <p></p>
                         </div>
                     </div>
                     <div class="card-cafe">
-                        <img src="./kfc-foto/13.png" height="150" width="250">
+                        <img src="./kfc-foto/14.png" height="150" width="250">
                         <div class="caardd" id="8">
                             <p>Картофель по дер. станд</p>
                             <p></p>
@@ -475,6 +362,12 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+    <!-- ФФФФФУУУУУУУТТТТТЕЕЕЕЕЕЕР -->
     <footer>
         <div class="footer-conteiner">
             <div class="footer-obshiy">
@@ -524,44 +417,5 @@
             </div>
         </div>
     </footer>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-          <div class="modal-header">
-            <a href="KFC.html"><span class="close">&times;</span></a>
-            <h2>Вход \ Регистрация</h2>
-          </div>
-          <div class="modal-body">
-              <hr>
-              <label for="email"><b>Email</b></label>
-              <input type="text" placeholder="Enter Email" name="email" required>
-          
-              <label for="psw"><b>Пароль</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
-          
-              <label for="psw-repeat"><b>Повторите пароль</b></label>
-              <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-              <hr>
-              <div class="reg-btn">
-                  <button type="submit" class="registerbtn">Регистрация</button>
-                  <button type="submit" class="signbtn">Войти</button>
-              </div>
-          </div>
-        </div>
-      </div>
-    <script>
-    var modal = document.getElementById("myModal");
-    var btn = document.getElementById("myBtn");
-    var btn1 = document.getElementById("mbtn");
-    var span = document.getElementsByClassName("close")[0];
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-    btn1.onclick = function() {
-      modal.style.display = "block";
-    }
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    </script>
 </body>
 </html>

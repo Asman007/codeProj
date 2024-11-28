@@ -8,8 +8,137 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>Fast-Food</title>
     <link rel="stylesheet" href="glavnai.css">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        .modal {  
+          display: none;
+          position: fixed;
+          z-index: 1;
+          padding-top: 100px;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgb(0,0,0);
+          background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content {
+            border-radius: 30px;
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 45%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+        @-webkit-keyframes animatetop {
+          from {top:-300px; opacity:0} 
+          to {top:0; opacity:1}
+        }
+        @keyframes animatetop {
+          from {top:-300px; opacity:0}
+          to {top:0; opacity:1}
+        }
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        input[type=text], input[type=password] {
+            width: 95%;
+            padding: 15px;
+            margin: 5px 0 15px 0;
+            display: inline-block;
+            border: none;
+            background: #c6c6c6;
+            border-radius: 20px;
+        }
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        .modal-header {
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            padding: 2px 16px;
+            background-color: #D67E34;
+            color: white;
+            margin-bottom: 15px;
+        }
+        .modal-header h2{
+            margin-left: 35%;
+        }
+        .modal-body {padding: 2px 16px;}
+        hr{
+            display: inline-block;
+        }
+        .registerbtn {
+            background-color: #D67E34;
+            color: white;
+            padding: 16px 20px;
+            margin-bottom: 15px;
+            border: none;
+            font-weight: 800;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 49%;
+            opacity: 0.9;
+        }
+        .registerbtn :hover{
+            background-color: white;
+            color: #D67E34;
+            border: 3px solid #D67E34;
+        }
+        .signbtn :hover{
+            background-color: #D67E34;
+            color: white;
+        }
+        .signbtn {
+            background-color: white;
+            color: #D67E34;
+            border: 3px solid #D67E34;
+            padding: 16px 20px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 49%;
+            opacity: 0.9;
+        }
+        button.new{
+            background-color: #D67E34;
+            text-decoration: none;
+            padding: 14px 40px ;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 30px;
+        }
+    </style>
 </head>
 <body>
+    <!--Библиотека jQuery-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!--Готовый скрипт корзины-->
+<script defer src="https://lk.easynetshop.ru/frontend/v5/ens-ad3520a2.js"></script>
+
+<!--Стили элементов для корзины-->
+<link href="https://lk.easynetshop.ru/frontend/v5/ens-ad3520a2.css" rel="stylesheet">
     <header>
         <div class="header_wrap ">
             <div>
@@ -18,14 +147,13 @@
             <div class="nav-bar">
                 <div class="bishkek">
                     <img src="foto/location.png" width="25px" height="25px">
-                    <p>Бишкек</p>
+                    <a href="https://2gis.kg/bishkek?m=74.614459%2C42.874096%2F10.93" target="_blank">Бишкек</a>
                 </div>
                 <div class="zakaz">
-                    <a href="#">ЗАКАЗАТЬ</a>
+                    <p><button id="myBtn" class="new"></button></p>
                 </div>
             </div>
         </div>
-
         <div class="menu">
             <div class="magazin">
                 Вам понравится
@@ -56,7 +184,7 @@
                                 Boso lagman
                             </div>
                             <div class="menu-button">
-                                <a href="MENU.KFC/MENU-KFC.html" class="menu-btn">Меню</a>
+                                <a href="Boso-lagman/Boso-lagman.html" class="menu-btn">Меню</a>
                             </div>
                         </div>
                     </div>
@@ -71,7 +199,7 @@
                                 ЭКИ-ДОС
                             </div>
                             <div class="menu-button">
-                                <a href="MENU.KFC/MENU-KFC.html" class="menu-btn">Меню</a>
+                                <a href="AKI-DOS/AKI-DOS.HTML" class="menu-btn">Меню</a>
                             </div>
                         </div>
                     </div>
@@ -86,7 +214,7 @@
                                 DODO PIZZA
                             </div>
                             <div class="menu-button">
-                                <a href="MENU.KFC/MENU-KFC.html" class="menu-btn">Меню</a>
+                                <a href="DODO-PIZZA/DODO-PIZZA.HTML" class="menu-btn">Меню</a>
                             </div>
                         </div>
                     </div>
@@ -100,36 +228,51 @@
                 <h3 class="cat">Категории</h3>
             </div>
             <div class="categoriii">
-                <div class="container-categori">
-                    <img src="foto/categoria-pizza.png" class="foto-categoria" width="150px" height="150px">
-                    <a href="all-cafe./allcafe.html" class="categoria">Пицца</a>
-                </div>
-                <div class="container-categori">
-                    <img src="foto/categoria-burger.jpeg" class="foto-categoria" width="150px" height="150px">
-                    <a href="all-cafe./allcafe.html" class="categoria">Бургер</a>
-                </div>
-                <div class="container-categori">
+                <a href="all-cafe/allcafe.html">
+                    <div class="container-categori" >
+                        <img href="all-cafe/allcafe.html"src="foto/categoria-pizza.png" class="foto-categoria" width="150px" height="150px">
+                        <a href="all-cafe/allcafe.html" class="categoria">Пицца</a>
+                    </div>
+                </a>
+                <a href="all-cafe/allcafe.html">
+                    <div class="container-categori" >
+                        <img src="foto/categoria-burger.jpeg" class="foto-categoria" width="150px" height="150px">
+                        <a href="all-cafe/allcafe.html" class="categoria">Бургер</a>
+                    </div>
+                </a>
+                <a href="all-cafe/allcafe.html">
+                    <div class="container-categori">
                     <img src="foto/categoria-shaurma.jpg"class="foto-categoria" width="150px" height="150px">
-                    <a href="all-cafe./allcafe.html" class="categoria">Шаурма</a>
+                    <a href="all-cafe/allcafe.html" class="categoria">Шаурма</a>
                 </div>
-                <div class="container-categori">
+                </a>
+                <a href="all-cafe/allcafe.html">
+                    <div class="container-categori">
                     <img src="foto/lagman.jpg" class="foto-categoria"width="150px" height="150px">
-                    <a href="all-cafe./allcafe.html" class="categoria">Лагман</a>
-                </div>
-                <div class="container-categori">
+                    <a href="all-cafe/allcafe.html" class="categoria">Лагман</a>
+                    </div>
+                </a>
+                <a href="all-cafe/allcafe.html">
+                    <div class="container-categori">
                     <img src="foto/categoria-shashlik.jpeg"class="foto-categoria" width="150px" height="150px">
-                    <a href="all-cafe./allcafe.html" class="categoria">Шашлык</a>
+                    <a href="all-cafe/allcafe.html" class="categoria">Шашлык</a>
                 </div>
+                </a>
+                
             </div>
             <div class="categoriii">
-                <div class="container-categori">
+                <a href="all-cafe/allcafe.html">
+                    <div class="container-categori">
                     <img src="foto/categoria-sushi.jpeg" class="foto-categoria" width="150px" height="150px">
-                    <a href="all-cafe./allcafe.html" class="categoria">Суши</a>
+                    <a href="all-cafe/allcafe.html" class="categoria">Суши</a>
                 </div>
-                <div class="container-categori">
+                </a>
+                <a href="all-cafe/allcafe.html">
+                    <div class="container-categori">
                     <img src="foto/categoria-plov.jpg" class="foto-categoria" width="150px" height="150px">
-                    <a href="all-cafe./allcafe.html" class="categoria">Плов</a>
+                    <a href="all-cafe/allcafe.html" class="categoria">Плов</a>
                 </div>
+                </a>
             </div>
         </div>   
     </div>
@@ -143,7 +286,7 @@
                 <h2>Стань курьером!</h2>
                 <p>Хочешь свободно работать с гибким графиком и хорошей оплатой? Тогда присоеденись к нам и ты будешь работать когда хочешь и сколько хочешь.</p>
                 <div class="a">
-                    <a href="#">Присоедениться</a>
+                    <button id="mbtn" class="new">Присоедениться</button>
                 </div>
             </div>
         </div>
@@ -197,5 +340,44 @@
             </div>
         </div>
     </footer>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Вход \ Регистрация</h2>
+          </div>
+          <div class="modal-body">
+              <hr>
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+          
+              <label for="psw"><b>Пароль</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+          
+              <label for="psw-repeat"><b>Повторите пароль</b></label>
+              <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+              <hr>
+              <div class="reg-btn">
+                  <button type="submit" class="registerbtn">Регистрация</button>
+                  <button type="submit" class="signbtn">Войти</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    <script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var btn1 = document.getElementById("mbtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn1.onclick = function() {
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    </script>
 </body>
 </html> 
